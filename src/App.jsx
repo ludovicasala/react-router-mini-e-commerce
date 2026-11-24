@@ -1,4 +1,6 @@
-import { Route, Routes } from 'react-router';
+import { BrowserRouter, Route, Routes } from 'react-router';
+
+import AppNavbar from './components/AppNavbar';
 
 import HomePage from './pages/HomePage';
 import AboutPage from './pages/AboutPage';
