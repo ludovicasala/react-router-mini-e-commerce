@@ -9,6 +9,7 @@ import ProductsPage from './pages/ProductsPage';
 function App() {
   return (
     <BrowserRouter>
+      <AppNavbar />
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/about" element={<AboutPage />} />

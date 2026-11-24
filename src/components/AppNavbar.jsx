@@ -4,7 +4,7 @@ function AppNavbar() {
 
     return (
         <header>
-            <NavLink to="/">Home</NavLink>
+            <NavLink to="/" end>Home</NavLink>
             <NavLink to="/about">About</NavLink>
             <NavLink to="/prodotti">Prodotti</NavLink>
         </header>
