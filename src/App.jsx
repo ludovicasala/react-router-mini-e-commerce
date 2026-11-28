@@ -1,4 +1,5 @@
 import { BrowserRouter, Route, Routes } from 'react-router';
+import { PriceFilterProvider } from './contexts/PriceFilterContext';
 
 import AppNavbar from './components/AppNavbar';
 
@@ -9,6 +10,7 @@ import ProductDetailPage from './pages/ProductDetailPage';
 
 function App() {
   return (
+    <PriceFilterProvider>
     <BrowserRouter>
       <AppNavbar />
       <main>
@@ -20,6 +22,7 @@ function App() {
         </Routes>
       </main>
     </BrowserRouter >
+    </PriceFilterProvider>
   );
 }
 
