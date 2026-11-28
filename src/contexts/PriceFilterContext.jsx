@@ -3,10 +3,10 @@ import { createContext, useContext, useState } from 'react';
 const PriceFilterContext = createContext(null);
 
 export function PriceFilterProvider({ children }) {
-  const [lowPrice, setLowPrice] = useState(false);
+  const [maxPrice, setMaxPrice] = useState(null);
 
   return (
-    <PriceFilterContext.Provider value={{ lowPrice, setLowPrice }}>
+    <PriceFilterContext.Provider value={{ maxPrice, setMaxPrice }}>
       {children}
     </PriceFilterContext.Provider>
   );

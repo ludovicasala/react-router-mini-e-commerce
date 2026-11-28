@@ -5,9 +5,9 @@ import { usePriceFilter } from '../contexts/PriceFilterContext';
 function ProductsPage() {
 
     const [products, setProducts] = useState([]);
-    const { lowPrice } = usePriceFilter();
+    const { maxPrice } = usePriceFilter();
 
-    console.log('lowPrice:', lowPrice);
+    console.log('maxPrice:', maxPrice);
 
     useEffect(() => {
         fetch('https://fakestoreapi.com/products')
@@ -15,9 +15,11 @@ function ProductsPage() {
             .then((data) => setProducts(data));
     }, []);
 
-    const visibleProducts = lowPrice
-        ? products.filter((product) => product.price <= 30)
-        : products;
+    const hasMaxPrice = maxPrice !== null && maxPrice !== '' && !Number.isNaN(Number(maxPrice));
+
+  const visibleProducts = hasMaxPrice
+    ? products.filter((product) => Number(product.price) <= Math.trunc(Number(maxPrice)))
+    : products;
 
     return (
         <section>
